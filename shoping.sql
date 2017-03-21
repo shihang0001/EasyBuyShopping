@@ -119,11 +119,12 @@ CONSTRAINT t_order_detail_p_id_fk FOREIGN KEY(p_id) REFERENCES t_product(id)
 --1.请分别给订单、订单明细添加一定的数据
 --添加订单
 INSERT INTO  t_order(id,u_id,u_name,u_address,create_time,cost,status) 
-select 1,u.id,u.NAME,u.ADDRESS,sysdate,p.price,'正在配货'
+select 1,u.id,u.NAME,u.ADDRESS,sysdate,p.price,'配货'
 from t_user u,t_product p
 WHERE u.id=1;
+
 INSERT INTO  t_order(id,u_id,u_name,u_address,create_time,cost,status) 
-select 2,u.id,u.NAME,u.ADDRESS,sysdate,p.price,'正在发送'
+select 2,u.id,u.NAME,u.ADDRESS,sysdate,p.price,'发送'
 from t_user u,t_product p
 WHERE u.id=2;
 
